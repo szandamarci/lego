@@ -1,0 +1,242 @@
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~$ cd lego_ws
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ sudo screen /dev/ttyACM0
+MicroPython v1.10-1527-g865e961de on 2020-01-23; LEGO Technic Large Hub with STM32F413xx
+Type "help()" for more information.
+>>> {"m":0,"p":[[49, [0, 0, -169, 0]], [61, [99, 7]], [48, [0, 0, 177, 0]], [48, [0, 0, 173, 0]], [49,
+{"m":0,"p":[[49, [0, 0, -169, 0]], [61, [99, 7]], [48, [0, 0, 177, 0]], [48, [0, 0, 172, 0]], [49, [0, {"m":0
+ctrl-C
+>>> import hub
+[sudo] password for marton: 
+sudo: screen: command not found
+MicroPython: command not found
+LEGO: command not found
+Type: command not found
+bash: syntax error near unexpected token `>'
+{m:0,p:[[49,: command not found
+ctrl-C: command not found
+bash: syntax error near unexpected token `>'
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ sudo pip3 install adafruit-ampy
+Collecting adafruit-ampy
+  Downloading adafruit_ampy-1.1.0-py2.py3-none-any.whl (16 kB)
+Requirement already satisfied: click in /usr/lib/python3/dist-packages (from adafruit-ampy) (8.0.3)
+Collecting pyserial
+  Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 KB 2.4 MB/s eta 0:00:00
+Collecting python-dotenv
+  Downloading python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+Installing collected packages: pyserial, python-dotenv, adafruit-ampy
+Successfully installed adafruit-ampy-1.1.0 pyserial-3.5 python-dotenv-1.1.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ cat demo/hello-world/hello-world.py
+import hub
+from spikedev.motor import MotorSpeedDPS, SpikeMediumMotor
+
+print("Hello World")
+
+# Run the motor 720 degrees at 180 degrees-per-second
+mtr = SpikeMediumMotor(hub.port.E)
+mtr.run_for_degrees(720, MotorSpeedDPS(180))
+cat: demo/hello-world/hello-world.py: No such file or directory
+Command 'import' not found, but can be installed with:
+sudo apt install graphicsmagick-imagemagick-compat  # version 1.4+really1.3.38-1ubuntu0.1, or
+sudo apt install imagemagick-6.q16                  # version 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.5
+sudo apt install imagemagick-6.q16hdri              # version 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.5
+Command 'from' not found, but can be installed with:
+sudo apt install mailutils
+bash: syntax error near unexpected token `"Hello World"'
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `720,'
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ ls
+src
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ cd src
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ls
+lego-hub-tk
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run demo/hello-world/hello-world.py
+Failed to find or read input file: demo/hello-world/hello-world.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'', b'Traceback (most recent call last):\r\n  File "<stdin>", line 2, in <module>\r\nImportError: no module named \'spikedev\'\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ls
+hello-world.py  lego-hub-tk
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+Hub name: {'usb_vid': 1684, 'device_uuid': '03970000-2C00-3C00-0751-383336393636', '1ms_tick_on_time': 99.9859, 'usb_pid': 16, '1ms_tick_min': 62000.0, '1ms_tick_miss': 86, 'hardware_version': 'Version_E', '1ms_tick_max': 2.6e+07, 'product_variant': 1, '1ms_tick_total': 612310}
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ python -m serial.tools.miniterm /dev/ttyACM0 115200
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'', b'Traceback (most recent call last):\r\n  File "<stdin>", line 4, in <module>\r\nAttributeError: \'NoneType\' object has no attribute \'run_for_degrees\'\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'', b'Traceback (most recent call last):\r\n  File "<stdin>", line 5\r\nSyntaxError: invalid syntax\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+Port A: None
+Port B: None
+Port C: None
+Port D: None
+Port E: None
+Port F: None
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+{'usb_vid': 1684, 'device_uuid': '03970000-2C00-3C00-0751-383336393636', '1ms_tick_on_time': 99.9888, 'usb_pid': 16, '1ms_tick_min': 249000.0, '1ms_tick_miss': 103, 'hardware_version': 'Version_E', '1ms_tick_max': 2.6e+07, 'product_variant': 1, '1ms_tick_total': 923315}
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+{T:1,S:9,R:[true, true, true, true, true, true],CT:1124431,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.8,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.8,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.8,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.8,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.8,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:32.7,FV:"3.0.22"}
+^C
+Aborted!
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+{T:1,S:9,R:[true, true, true, true, true, true],CT:1255087,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:32.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:328,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:31.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:328,CS:1,HT:31.9,FV:"3.0.22"}
+^C
+Aborted!
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ampy --port /dev/ttyACM0 run hub.py
+ERS_V3.0.12.20_Robot
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ampy --port /dev/ttyACM0 run hub.py
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'', b'Traceback (most recent call last):\r\n  File "<stdin>", line 2, in <module>\r\nOSError: [Errno 2] ENOENT\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ampy --port /dev/ttyACM0 get ers.py > ers.py
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ls
+ers.py  hello-world.py  hub.py  lego-hub-tk
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ ampy --port /dev/ttyACM0 get ersver.txt > ersver.txt
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+[sudo] password for marton: 
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'', b'Traceback (most recent call last):\r\n  File "<stdin>", line 6, in <module>\r\nAttributeError: \'NoneType\' object has no attribute \'mode\'\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run hello-world.py
+{T:1,S:9,R:[true, true, true, true, true, true],CT:2245175,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:32.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:330,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:32.9,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:33.0,FV:"3.0.22"}
+{T:1,S:9,R:[true, true, true, true, true, true],CT:7,BT:100,PA:[-2876, 7488, 4762, 30, 27, -2280],CC:329,CS:1,HT:33.0,FV:"3.0.22"}
+^C
+Aborted!
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ 
+

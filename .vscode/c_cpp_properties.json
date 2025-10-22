@@ -1,0 +1,57 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/marton/ws_moveit2/install/pilz_industrial_motion_planner_testutils/include/**",
+        "/home/marton/ws_moveit2/install/pilz_industrial_motion_planner/include/**",
+        "/home/marton/ws_moveit2/install/moveit_visual_tools/include/**",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_visualization/include/**",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_demo/include/**",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_core/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_control_interface/include/**",
+        "/home/marton/ws_moveit2/install/moveit_simple_controller_manager/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_assistant/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_srdf_plugins/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_core_plugins/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_controllers/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_app_plugins/include/**",
+        "/home/marton/ws_moveit2/install/moveit_setup_framework/include/**",
+        "/home/marton/ws_moveit2/install/moveit_servo/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_visualization/include/**",
+        "/home/marton/ws_moveit2/install/moveit_hybrid_planning/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_planning_interface/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_benchmarks/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_warehouse/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_robot_interaction/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_perception/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_move_group/include/**",
+        "/home/marton/ws_moveit2/install/moveit_planners_ompl/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_planning/include/**",
+        "/home/marton/ws_moveit2/install/moveit_ros_occupancy_map_monitor/include/**",
+        "/home/marton/ws_moveit2/install/moveit_kinematics/include/**",
+        "/home/marton/ws_moveit2/install/chomp_motion_planner/include/**",
+        "/home/marton/ws_moveit2/install/moveit_core/include/**",
+        "/home/marton/ws_moveit2/install/srdfdom/include/**",
+        "/home/marton/ws_moveit2/install/rviz_marker_tools/include/**",
+        "/home/marton/ws_moveit2/install/rosparam_shortcuts/include/**",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_msgs/include/**",
+        "/home/marton/mecanum_launch_ws/install/nexus_4wd_mecanum_gazebo/include/**",
+        "/home/marton/mecanum_launch_ws/install/mecanum_plugin/include/**",
+        "/home/marton/mecanum_launch_ws/install/mecanum_common/include/**",
+        "/home/marton/mecanum_launch_ws/install/mecanum_4wd_plugin/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

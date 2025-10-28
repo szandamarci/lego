@@ -19,6 +19,7 @@ from sensor_msgs.msg import JointState
 import serial
 import json
 import numpy
+import time
 
 class MinimalSubscriber(Node):
 
@@ -31,28 +32,39 @@ class MinimalSubscriber(Node):
             10)
         self.subscription  # prevent unused variable warning
         self.positions = {"A1":0,"A2":6075,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}
-
+        self.last_sent_time=time.time()
+        self.send_rate_hz=1.0
         self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout=10)
         self.get_logger().info('Robot arm connected on /dev/ttyACM0')
 
     def listener_callback(self, msg):
+        now = time.time()
+
+        if now - self.last_sent_time < (1.0/self.send_rate_hz):
+            return
+
+        self.last_sent_time = now
+
         joint_names = msg.name
         joint_positions = msg.position
         
         data =dict(zip(joint_names, joint_positions))
 
-        self.positions['A1']=data['rob_joint_1']/numpy.pi*7000
-        self.positions['A2']=data['rob_joint_2']/numpy.pi*12150
-        self.positions['A3']=data['rob_joint_3']/numpy.pi*9446
+        self.positions['A1']=data['rob_joint_1']*2228.23
+        self.positions['A2']=6073# data['rob_joint_2']/numpy.pi*12150 (5092)
+        self.positions['A3']=4723#data['rob_joint_3']/numpy.pi*9446
         self.positions['A4']= 0 #data['rob_joint_4']/numpy.pi*180
         self.positions['A5']= 0 #data['rob_joint_5']/numpy.pi*180
         self.positions['A6']= 0 #data['rob_joint_6']/numpy.pi*180
 
         joints = json.dumps(self.positions, separators=(',', ':'))
+        try:
+            self.ser.write((joints + "\n").encode())
+            self.get_logger().info('Joint states: "%s"' % data)
+            self.get_logger().info('JSON: "%s"' % joints)
 
-        self.ser.write((joints + "\n").encode())
-        self.get_logger().info('Joint states: "%s"' % data)
-        self.get_logger().info('JSON: "%s"' % joints)
+        except serial.SerialException as e:
+            self.get_logger().error(f"Serial write failed: {e}")
     
     def destroy_node(self):
         # if self.ser and self.ser.is_open:

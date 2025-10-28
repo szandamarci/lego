@@ -1,0 +1,75 @@
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ ros2 run pub listener_joint_states
+[INFO] [1761663450.573515128] [minimal_subscriber]: Robot arm connected on /dev/ttyACM0
+[INFO] [1761663451.531569427] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663451.532053669] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663452.544324817] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663452.546873440] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663453.552946599] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663453.553838699] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663454.553827636] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663454.555930297] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663455.564367272] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663455.566999000] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663456.562772127] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663456.563795588] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663457.574541888] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663457.576492776] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663458.573860864] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663458.576153802] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663459.583665787] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663459.585073698] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663460.583717009] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663460.584284265] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663461.591082425] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.0, 'rob_joint_2': 0.0, 'rob_joint_3': 0.0, 'rob_joint_4': 0.0, 'rob_joint_5': 0.0, 'rob_joint_6': 0.0}"
+[INFO] [1761663461.591616466] [minimal_subscriber]: JSON: "{"A1":0.0,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[INFO] [1761663462.602055561] [minimal_subscriber]: Joint states: "{'rob_joint_1': 0.2520523678855119, 'rob_joint_2': 0.12602456700694292, 'rob_joint_3': -2.1977766298228664e-06, 'rob_joint_4': 8.263588463704388e-06, 'rob_joint_5': 1.2520475088095087e-05, 'rob_joint_6': -8.586602185439382e-06}"
+[INFO] [1761663462.603391268] [minimal_subscriber]: JSON: "{"A1":561.6306476935341,"A2":6073,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}"
+[ERROR] [1761663463.603028364] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663464.603768308] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663465.604107427] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663466.613219614] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663467.612641324] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663468.613950496] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663469.621709691] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663470.633332028] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663471.641408361] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663472.643432331] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663473.655191755] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663474.662266561] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663475.673528473] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663476.673969004] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663477.683172420] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663478.691635629] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663479.692153434] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663480.700781720] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663481.701772834] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663482.705034497] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+[ERROR] [1761663483.713770668] [minimal_subscriber]: Serial write failed: write failed: [Errno 5] Input/output error
+^C[INFO] [1761663483.719159386] [minimal_subscriber]: Interrupted by user. Shutting down.
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws$ 
+
+
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run init.py
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1656, in invoke
+    super().invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 99, in cli
+    _board = pyboard.Pyboard(port, baudrate=baud, rawdelay=delay)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 147, in __init__
+    raise PyboardError('failed to access ' + device)
+ampy.pyboard.PyboardError: failed to access /dev/ttyACM0
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ gedit hiba_2
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ 
+
+

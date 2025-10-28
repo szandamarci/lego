@@ -1,0 +1,38 @@
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ sudo ampy --port /dev/ttyACM0 run init.py
+{T:1,S:9,R:[false, false, true, true, false, false],CT:1066622,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.6,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:344,CS:1,HT:28.6,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.6,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:348,CS:1,HT:28.6,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:113,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[245, 247, 5759, -3, 0, 0],CC:391,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:1072794,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.6,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:345,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:339,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:349,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}
+{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}
+Traceback (most recent call last):
+  File "/usr/local/bin/ampy", line 8, in <module>
+    sys.exit(cli())
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1659, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/lib/python3/dist-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/lib/python3/dist-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/cli.py", line 338, in run
+    output = board_files.run(local_file, not no_output, not no_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/files.py", line 309, in run
+    self._pyboard.execfile(filename, stream_output=True)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 285, in execfile
+    return self.exec_(pyfile, stream_output=stream_output)
+  File "/usr/local/lib/python3.10/dist-packages/ampy/pyboard.py", line 279, in exec_
+    raise PyboardError('exception', ret, ret_err)
+ampy.pyboard.PyboardError: ('exception', b'{T:1,S:9,R:[false, false, true, true, false, false],CT:1066622,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.6,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:344,CS:1,HT:28.6,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.6,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:348,CS:1,HT:28.6,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[0, 0, 6001, -3, 0, 0],CC:349,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:113,R:[false, false, true, true, false, false],CT:9,BT:100,PA:[245, 247, 5759, -3, 0, 0],CC:391,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:1072794,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.6,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:345,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:339,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:13,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:349,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}\r\n{T:1,S:9,R:[false, false, true, true, false, false],CT:12,BT:100,PA:[3499, 3037, 5759, -3, 0, 0],CC:348,CS:1,HT:28.5,FV:"3.0.22"}\r\n', b'Traceback (most recent call last):\r\n  File "<stdin>", line 10, in <module>\r\n  File "<string>", line 208, in <module>\r\nTypeError: unsupported types for __gt__: \'dict\', \'int\'\r\n')
+marton@marton-HP-Pavilion-Laptop-14-ce3xxx:~/lego_ws/src$ 
+

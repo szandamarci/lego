@@ -1,0 +1,36 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/build/moveit_configs_utils",
+        "/home/marton/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/marton/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/install/mecanum_moveit_launch/lib/python3.10/site-packages",
+        "/home/marton/ws_moveit2/build/launch_param_builder",
+        "/home/marton/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/marton/lego_ws/install/pub/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/install/mecanum_pi_launch/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/build/mecanum_launch",
+        "/home/marton/mecanum_launch_ws/install/mecanum_launch/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/install/mecanum_common/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/build/moveit_configs_utils",
+        "/home/marton/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/marton/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/marton/ws_moveit2/install/mecanum_moveit_launch/lib/python3.10/site-packages",
+        "/home/marton/ws_moveit2/build/launch_param_builder",
+        "/home/marton/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/marton/lego_ws/install/pub/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/install/mecanum_pi_launch/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/build/mecanum_launch",
+        "/home/marton/mecanum_launch_ws/install/mecanum_launch/lib/python3.10/site-packages",
+        "/home/marton/mecanum_launch_ws/install/mecanum_common/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

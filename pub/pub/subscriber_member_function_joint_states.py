@@ -33,7 +33,7 @@ class MinimalSubscriber(Node):
         self.subscription  # prevent unused variable warning
         self.positions = {"A1":0,"A2":6075,"A3":4723,"A4":0,"A5":0,"A6":0,"On":1}
         self.last_sent_time=time.time()
-        self.send_rate_hz=1.0
+        self.send_rate_hz=7.5
         self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout=10)
         self.get_logger().info('Robot arm connected on /dev/ttyACM0')
 
@@ -41,6 +41,7 @@ class MinimalSubscriber(Node):
         now = time.time()
 
         if now - self.last_sent_time < (1.0/self.send_rate_hz):
+            print("**************")
             return
 
         self.last_sent_time = now
@@ -50,12 +51,12 @@ class MinimalSubscriber(Node):
         
         data =dict(zip(joint_names, joint_positions))
 
-        self.positions['A1']=data['rob_joint_1']*2228.23
-        self.positions['A2']=6073# data['rob_joint_2']/numpy.pi*12150 (5092)
-        self.positions['A3']=4723#data['rob_joint_3']/numpy.pi*9446
-        self.positions['A4']= 0 #data['rob_joint_4']/numpy.pi*180
-        self.positions['A5']= 0 #data['rob_joint_5']/numpy.pi*180
-        self.positions['A6']= 0 #data['rob_joint_6']/numpy.pi*180
+        self.positions['A1']=data['rob_joint_1']*3500/(numpy.pi/2)
+        self.positions['A2']=6073-3692.3947*data['rob_joint_2'] #/numpy.pi*12150 (5092)
+        self.positions['A3']=4723 - data['rob_joint_3'] * 2899.1664 #/numpy.pi*9446
+        self.positions['A4']= - data['rob_joint_4'] * 1209.5776#/numpy.pi*180
+        self.positions['A5']= - data['rob_joint_5'] * 1370 #/numpy.pi*180
+        self.positions['A6']= - data['rob_joint_6'] *700.2817 #/numpy.pi*180
 
         joints = json.dumps(self.positions, separators=(',', ':'))
         try:
